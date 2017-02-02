@@ -17,7 +17,7 @@ This will turn the following:
 Into:
 
 ```html
-<ul>
+<ul class="CLASSNAME">
   <li>
     <a href="https://github.com/internetimagery/github-release/releases/latest"></a>
   </li>
