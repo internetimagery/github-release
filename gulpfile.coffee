@@ -4,7 +4,7 @@ coffee = require 'gulp-coffee'
 uglify = require 'gulp-uglify'
 
 gulp.task "default", ()->
-  gulp.src "./main.coffee"
+  gulp.src "./src/*.coffee"
   .pipe coffee()
   .pipe uglify()
   .pipe gulp.dest "./dist/"

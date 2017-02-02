@@ -8,7 +8,7 @@
   uglify = require('gulp-uglify');
 
   gulp.task("default", function() {
-    return gulp.src("./main.coffee").pipe(coffee()).pipe(uglify()).pipe(gulp.dest("./dist/"));
+    return gulp.src("./src/*.coffee").pipe(coffee()).pipe(uglify()).pipe(gulp.dest("./dist/"));
   });
 
 }).call(this);
