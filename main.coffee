@@ -12,7 +12,7 @@ request = (url, callback)->
   handle.open "GET", url, true
   handle.send()
 
-@ready = ()->
+@scan_releases = ( class_name = "releases" )->
   # Find all relevant links on the page
   # Check urls for any latest release github links
   # EXAMPLE:
@@ -37,12 +37,15 @@ request = (url, callback)->
             release_data = JSON.parse response
             assets = release_data.assets
             if assets and assets.length
-              new_link_list = document.createElement "li"
+              new_link_list = document.createElement "ul"
+              new_link_list.className = class_name
               link.parentNode.replaceChild new_link_list, link
               for asset in assets
+                new_entry = document.createElement "li"
+                new_link_list.appendChild new_entry
                 new_link = document.createElement "a"
                 new_link.href = asset.browser_download_url
                 new_link.innerHTML = asset.name
-                new_link_list.appendChild new_link
+                new_entry.appendChild new_link
           catch err
             console.error err.message
