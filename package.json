@@ -1,0 +1,31 @@
+{
+  "name": "github-release",
+  "version": "1.0.0",
+  "description": "Changes links pointing to latest github releases into direct downloads to the releases",
+  "main": "main.js",
+  "scripts": {
+    "build": "gulp",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/internetimagery/github-release.git"
+  },
+  "keywords": [
+    "github",
+    "release",
+    "link",
+    "download"
+  ],
+  "author": "Jason Dixon",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/internetimagery/github-release/issues"
+  },
+  "homepage": "https://github.com/internetimagery/github-release#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-coffee": "^2.3.3",
+    "gulp-uglify": "^2.0.1"
+  }
+}
