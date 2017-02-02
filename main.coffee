@@ -1,4 +1,4 @@
-
+# Simple Ajax request
 request = (url, callback)->
   handle = new XMLHttpRequest()
   handle.onreadystatechange = ()->
@@ -31,10 +31,18 @@ request = (url, callback)->
         request api_url, (err, response)->
           return console.error err.message if err
           try
+            # Collect data from API.
+            # Replace anchor element with a list element
+            # Populate the list element with new anchors for each release
             release_data = JSON.parse response
-            for asset in release_data.assets or []
-              download = asset.browser_download_url
-              name = asset.name
-              console.log link
+            assets = release_data.assets
+            if assets and assets.length
+              new_link_list = document.createElement "li"
+              link.parentNode.replaceChild new_link_list, link
+              for asset in assets
+                new_link = document.createElement "a"
+                new_link.href = asset.browser_download_url
+                new_link.innerHTML = asset.name
+                new_link_list.appendChild new_link
           catch err
             console.error err.message
