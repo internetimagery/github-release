@@ -11,7 +11,7 @@ scan_releases(CLASSNAME);
 This will turn the following:
 
 ```html
-<a href="https://github.com/internetimagery/github-release/releases/latest"></a>
+<a href="https://github.com/internetimagery/github-release/releases/latest">Download</a>
 ```
 
 Into:
@@ -19,7 +19,7 @@ Into:
 ```html
 <ul class="CLASSNAME">
   <li>
-    <a href="https://github.com/internetimagery/github-release/releases/latest"></a>
+    <a href="https://github.com/internetimagery/github-release/releases/latest">github-release.js</a>
   </li>
 </ul>
 ```
